@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import Loading from "@/components/atoms/Loading";
-import Grid, { ITileItem } from "@/components/molecules/Grid";
+import Grid from "@/components/molecules/Grid";
 import SearchBar from "@/components/molecules/Filters";
 import Pagination from "@/components/molecules/Pagination";
+import { IGridItem } from "@/components/atoms/GridItems";
 
 const inter = Inter({ subsets: ["latin"] });
 const apiKey = "pLURtkhVrUXr3KG25Gy5IvzziV5OrZGa";
@@ -13,7 +14,7 @@ export default function Home() {
   const [pages, setPages] = useState(1);
   const [query, setQuery] = useState("");
   const [isLoading, setIsLoadig] = useState(false);
-  const [data, setData] = useState<ITileItem[]>([]);
+  const [data, setData] = useState<IGridItem[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
 
   const fetchApi = (q: string, offset: number) => {
