@@ -14,7 +14,7 @@ export default function Button({
 }: PropsWithChildren<IButton>) {
   return (
     <button
-      className={`border bg-neutral-500 rounded px-4 py-3 text-white ${className} ${
+      className={`border bg-neutral-700 rounded px-4 py-3 text-white ${className} ${
         disabled ? "opacity-50 pointer-events-none" : ""
       }`}
       {...props}
